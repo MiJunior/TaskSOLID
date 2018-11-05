@@ -1,4 +1,8 @@
 <?php
-interface iInputInterface{
+
+namespace classes;
+
+interface iInputInterface
+{
     public function input();
 }
