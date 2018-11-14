@@ -14,9 +14,15 @@ if ($check === '0') {
     echo "Если Вы хотите ввести данные через консоль - введите 0\nEсли хотите указать путь к файлу - введите 1\n";
     $checkAdd = readline('');
     if ($checkAdd === '0') {
-        $consoleAdd->addTags();
+        echo "Введите вашу строку: ";
+        $read = readline('');
+        $result = $consoleAdd->addTags($read);
+        echo "$result \n";
     } elseif ($checkAdd === '1') {
-        $fileAdd->addTags();
+        echo "Введите путь к файлу: ";
+        $filename = readline('') ;
+        $result = $fileAdd->addTags($filename);
+        echo "$result\n";
     } else {
         echo "Упс! Попробуйте ещё раз...\n";
         goto add;
@@ -26,9 +32,15 @@ if ($check === '0') {
     echo "Если Вы хотите ввести данные через консоль - введите 0\nEсли хотите указать путь к файлу - введите 1\n";
     $checkStrip = readline('');
     if ($checkStrip === '0') {
-        $console->input();
+        echo "Введите вашу строку: ";
+        $read = readline('');
+        $result = $console->input($read);
+        echo "$result\n";
     } elseif ($checkStrip === '1') {
-        $files->input();
+        echo "Введите путь к файлу: ";
+        $filename = readline('');
+        $result = $files->input($filename);
+        echo "$result\n";
     } else {
         echo "Упс! Попробуйте ещё раз...\n";
         goto strip;

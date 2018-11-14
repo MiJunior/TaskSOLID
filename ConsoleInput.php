@@ -4,11 +4,9 @@ namespace classes;
 
 class ConsoleInput implements iInputInterface
 {
-    public function input()
+    public function input($data)
     {
-        echo "Введите вашу строку: ";
-        $data = readline('');
         $newData = strip_tags($data);
-        echo $newData . "\n";
+        return $newData;
     }
 }
